@@ -22,7 +22,7 @@ var Bitcore_ = {
 };
 
 
-var BitcorePayPro = require('bitcore-payment-protocol-dash');
+var BitcorePayPro = require('@dashevo/dashcore-payment-protocol');
 
 var BWS = require('bitcore-wallet-service-dash');
 

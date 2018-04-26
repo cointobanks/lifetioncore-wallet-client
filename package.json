@@ -29,7 +29,7 @@
     "bitcore-lib-dash": "^0.15.0",
     "bitcore-lib-cash": "^0.16.1",
     "@dashevo/dashcore-mnemonic": "github:snogcel/bitcore-mnemonic-dash#master_upstream",
-    "bitcore-payment-protocol-dash": "github:snogcel/bitcore-payment-protocol-dash#master_upstream",
+    "@dashevo/dashcore-payment-protocol": "github:snogcel/bitcore-payment-protocol-dash#master_upstream",
     "grunt-jsdox": "matiu/grunt-jsdox#update/jsdoc-4.10",
     "json-stable-stringify": "^1.0.0",
     "lodash": "^4.17.4",
