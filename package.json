@@ -38,7 +38,7 @@
     "superagent": "^3.4.1"
   },
   "devDependencies": {
-    "bitcore-wallet-service-dash": "github:snogcel/bitcore-wallet-service-dash#master_upstream",
+    "bitcore-wallet-service-dash": "^2.3.1",
     "browserify": "^13.1.0",
     "chai": "^1.9.1",
     "coveralls": "^2.11.2",
