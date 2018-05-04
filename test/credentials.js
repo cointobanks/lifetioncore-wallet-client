@@ -33,7 +33,7 @@ describe('Credentials', function() {
     it('should return path for livenet', function() {
       var c = Credentials.create('btc', 'livenet');
       var path = c.getBaseAddressDerivationPath();
-      path.should.equal("m/44'/0'/0'");
+      path.should.equal("m/44'/5'/0'");
     });
     it('should return path for testnet account 2', function() {
       var c = Credentials.create('btc', 'testnet');
@@ -53,7 +53,7 @@ describe('Credentials', function() {
     it('should derive extended private key from master livenet', function() {
       var c = Credentials.fromExtendedPrivateKey('btc', 'xprv9s21ZrQH143K3zLpjtB4J4yrRfDTEfbrMa9vLZaTAv5BzASwBmA16mdBmZKpMLssw1AzTnm31HAD2pk2bsnZ9dccxaLD48mRdhtw82XoiBi', 0, 'BIP44');
       var xpk = c.getDerivedXPrivKey().toString();
-      xpk.should.equal('xprv9xud2WztGSSBPDPDL9RQ3rG3vucRA4BmEnfAdP76bTqtkGCK8VzWjevLw9LsdqwH1PEWiwcjymf1T2FLp12XjwjuCRvcSBJvxDgv1BDTbWY');
+      xpk.should.equal('xprv9yyTSKGrpBwXwAjcTYzmDDYRdP5x9xMrwsiikX85eBFbYDvrPJUW5247qwaDCb8DZ5cGtPYwhsXn7wEZZQDJ1G9Q7VUXFZwELiC8SWWcVLb');
     });
     it('should derive extended private key from master testnet', function() {
       var c = Credentials.fromExtendedPrivateKey('btc', 'tprv8ZgxMBicQKsPfPX8avSJXY1tZYJJESNg8vR88i8rJFkQJm6HgPPtDEmD36NLVSJWV5ieejVCK62NdggXmfMEHog598PxvXuLEsWgE6tKdwz', 0, 'BIP44');
@@ -63,7 +63,7 @@ describe('Credentials', function() {
     it('should derive extended private key from master BIP48 livenet', function() {
       var c = Credentials.fromExtendedPrivateKey('btc', 'xprv9s21ZrQH143K3zLpjtB4J4yrRfDTEfbrMa9vLZaTAv5BzASwBmA16mdBmZKpMLssw1AzTnm31HAD2pk2bsnZ9dccxaLD48mRdhtw82XoiBi', 0, 'BIP48');
       var xpk = c.getDerivedXPrivKey().toString();
-      xpk.should.equal('xprv9yaGCLKPS2ovEGw987MZr4DCkfZHGh518ndVk3Jb6eiUdPwCQu7nYru59WoNkTEQvmhnv5sPbYxeuee5k8QASWRnGV2iFX4RmKXEQse8KnQ');
+      xpk.should.equal('xprv9zSi7DBnJDEmh5JCd9SpeupJrmePdHA9tLcx8tiRZVmwp8EN6w34pUUWUu9vEm6VzRcAku2YFDDPuSaCB9ePusmgK9dJSEVmjuSw6gakbqD');
     });
     it('should derive extended private key from master livenet (BIP45)', function() {
       var c = Credentials.fromExtendedPrivateKey('btc', 'xprv9s21ZrQH143K3zLpjtB4J4yrRfDTEfbrMa9vLZaTAv5BzASwBmA16mdBmZKpMLssw1AzTnm31HAD2pk2bsnZ9dccxaLD48mRdhtw82XoiBi', 0, 'BIP45');
@@ -97,8 +97,8 @@ describe('Credentials', function() {
       var c = Credentials.fromExtendedPrivateKey('btc', xPriv, 0, 'BIP44');
 
       c.xPrivKey.should.equal('xprv9s21ZrQH143K2TjT3rF4m5AJcMvCetfQbVjFEx1Rped8qzcMJwbqxv21k3ftL69z7n3gqvvHthkdzbW14gxEFDYQdrRQMub3XdkJyt3GGGc');
-      c.xPubKey.should.equal('xpub6DUean44k773kxbUq8QpSmAPFaNCpk5AzrxbFRAMsNCZBGD15XQVnRJCgNd8GtJVmDyDZh89NPZz1XPQeX5w6bAdLGfSTUuPDEQwBgKxfh1');
-      c.copayerId.should.equal('bad66ef88ad8dec08e36d576c29b4f091d30197f04e166871e64bf969d08a958');
+      c.xPubKey.should.equal('xpub6Ch4Yh5DJ1iiGN2f8oEV4J2HRiScn2mgcBpYH2bRq9y4Wgy9ePW8FWhrPEcshKZ6dYLYJaFK6BeHznMDS32dKp7VPTU8e5UpNNjSXYDn1Se');
+      c.copayerId.should.equal('73392bb9c2caf268182c5594c0c5cd65cf22411581db8e8b43b98eefa4a7d841');
       c.network.should.equal('livenet');
       c.personalEncryptingKey.should.equal('M4MTmfRZaTtX6izAAxTpJg==');
       should.not.exist(c.walletPrivKey);
@@ -121,7 +121,7 @@ describe('Credentials', function() {
       it('Should create compliant base address derivation key', function() {
         var xPriv = 'xprv9s21ZrQH143K4HHBKb6APEoa5i58fxeFWP1x5AGMfr6zXB3A6Hjt7f9LrPXp9P7CiTCA3Hk66cS4g8enUHWpYHpNhtufxSrSpcbaQyVX163';
         var c = Credentials.fromExtendedPrivateKey('btc', xPriv, 0, 'BIP44');
-        c.xPubKey.should.equal('xpub6CUtFEwZKBEyX6xF4ECdJdfRBBo69ufVgmRpy7oqzWJBSadSZ3vaqvCPNFsarga4UWcgTuoDQL7ZnpgWkUVUAX3oc7ej8qfLEuhMALGvFwX');
+        c.xPubKey.should.equal('xpub6D64Vj1b48f8Tw4imnQupPLfheinLyjtjmoJ1vTGKrEkf9AztQmQR9ovAFYwhLGMtkdQQqBwxN4LU8fTEeC1pD6tPW9VXwRji49mqeyrGsQ');
       });
 
       it('Should create compliant request key', function() {
@@ -150,8 +150,8 @@ describe('Credentials', function() {
       c.network.should.equal('livenet');
       c.account.should.equal(0);
       c.derivationStrategy.should.equal('BIP44');
-      c.xPubKey.should.equal('xpub6BosfCnifzxcFwrSzQiqu2DBVTshkCXacvNsWGYJVVhhawA7d4R5WSWGFNbi8Aw6ZRc1brxMyWMzG3DSSSSoekkudhUd9yLb6qx39T9nMdj');
-      c.getBaseAddressDerivationPath().should.equal("m/44'/0'/0'");
+      c.xPubKey.should.equal('xpub6CYEjsU6zPM3sADS2ubu2aZeGxCm3C5KabkCpo4rkNbXGAH9M7rRUJ4E5CKiyUddmRzrSCopPzisTBrXkfCD4o577XKM9mzyZtP1Xdbizyk');
+      c.getBaseAddressDerivationPath().should.equal("m/44'/5'/0'");
     });
 
     it('Should create credentials from mnemonic BIP48', function() {
@@ -161,8 +161,8 @@ describe('Credentials', function() {
       c.network.should.equal('livenet');
       c.account.should.equal(0);
       c.derivationStrategy.should.equal('BIP48');
-      c.xPubKey.should.equal('xpub6CKZtUaK1YHpQbg6CLaGRmsMKLQB1iKzsvmxtyHD6X7gzLqCB2VNZYd1XCxrccQnE8hhDxtYbR1Sakkvisy2J4CcTxWeeGjmkasCoNS9vZm');
-      c.getBaseAddressDerivationPath().should.equal("m/48'/0'/0'");
+      c.xPubKey.should.equal('xpub6CL6EgjiTdEgvbwZHAhbaHVoBTUJB1pfrGgSn7gmGXpPwE4mMbaX5WCjj9Fe69mwkpJup2QPuCeCLzwZYQUV1GoZc8wQnkdnVvZF1dGvNzD');
+      c.getBaseAddressDerivationPath().should.equal("m/48'/5'/0'");
     });
 
     it('Should create credentials from mnemonic account 1', function() {
@@ -170,8 +170,8 @@ describe('Credentials', function() {
       var c = Credentials.fromMnemonic('btc', 'livenet', words, '', 1, 'BIP44');
       c.xPrivKey.should.equal('xprv9s21ZrQH143K3GJpoapnV8SFfukcVBSfeCficPSGfubmSFDxo1kuHnLisriDvSnRRuL2Qrg5ggqHKNVpxR86QEC8w35uxmGoggxtQTPvfUu');
       c.account.should.equal(1);
-      c.xPubKey.should.equal('xpub6BosfCnifzxcJJ1wYuntGJfF2zPJkDeG9ELNHcKNjezuea4tumswN9sH1psMdSVqCMoJC21Bv8usSeqSP4Sp1tLzW7aY59fGn9GCYzx5UTo');
-      c.getBaseAddressDerivationPath().should.equal("m/44'/0'/1'");
+      c.xPubKey.should.equal('xpub6CYEjsU6zPM3sjyA2Kfki79ceB3pHuivaAez2u3KbBwiyRMgQLayfoLCpm26YbM2TPiDdkvEZ19Mra9kXqmWYgtg5CoHfZpqnmE6ii91kDH');
+      c.getBaseAddressDerivationPath().should.equal("m/44'/5'/1'");
     });
 
     it('Should create credentials from mnemonic with undefined/null passphrase', function() {
@@ -209,7 +209,7 @@ describe('Credentials', function() {
         var words = "shoulder sphere pull seven top much black copy labor dress depth unit";
         var c = Credentials.fromMnemonic('btc', 'livenet', words, '', 0, 'BIP44');
         c.xPrivKey.should.equal('xprv9s21ZrQH143K3WoNK8dVjQJpcXhqfwyuBTpuZdc1ZVa9yWW2i7TmM4TLyfPrSKXctQuLgbg3U1WJmodK9yWM26JWeuh2vhT6bmsPPie688n');
-        c.xPubKey.should.equal('xpub6DVMaW3r1CcZcsUazSHspjRfZZJzZG3N7GRL4DciY54Z8M4KmRSDrq2hd75VzxKZDXPu4EKiAwCGwiXMxec2pq6oVgtZYxQHSrgtxksWehx');
+        c.xPubKey.should.equal('xpub6C6KUNNB8LyRvniJ2hra19WTMp5Uk4h5shKHNhuo4MsqAGtSpjE9b1iMHcjCjeaTZozyoLYEAhV78o611zxXhPe9jpJ3LeikhwT2mSmsNcn');
       });
 
       it('Should create compliant request key from mnemonic', function() {

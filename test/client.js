@@ -1209,7 +1209,7 @@ describe('client API', function() {
           should.not.exist(err);
           x.coin.should.equal('bch');
           x.network.should.equal('livenet');
-          x.address.should.equal('CcJ4qUfyQ8x5NwhAeCQkrBSWVeXxXghcNz');
+          x.address.should.equal('CV5CscvDHNHzUYe5iR4dLLzGdfHGvyoBRX');
           done();
         })
       });
@@ -3918,7 +3918,7 @@ describe('client API', function() {
             nonCompliantDerivation: true,
           });
           clients[0].credentials.xPrivKey.toString().should.equal('xprv9s21ZrQH143K3E71Wm5nrxuMdqCTMG6AM5Xyp4dJ3ZkUj2gEpfifT5Hc1cfqnycKooRpzoH4gjmAKDmGGaH2k2cSe29EcQSarveq6STBZZW');
-          clients[0].credentials.xPubKey.toString().should.equal('xpub6CLj2x8T5zwngq3Uq42PbXbAXnyaUtsANEZaBjAPNBn5PbhSJM29DM5nhrdJDNpEy9X3n5sQhk6CNA7PKTp48Xvq3QFdiYAXAcaWEJ6Xmug');
+          clients[0].credentials.xPubKey.toString().should.equal('xpub6Chwk9ujUsVpqQrwfBGbxyvyqgxgBQWvnk1nZEnZs3H3LvqkoHT5f2GB5ypUtZSnyUHfDf3mbkH2hELDy9zditbgewChrYMqWnMGv4kxXbu');
           setup(function() {
             importedClient = helpers.newClient(app);
             var spy = sinon.spy(importedClient, 'openWallet');
