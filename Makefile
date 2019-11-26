@@ -2,16 +2,16 @@
 
 BIN_PATH:=node_modules/.bin/
 
-all:	bitcore-wallet-client.min.js
+all:	lifetioncore-wallet-client.min.js
 
 clean:
-	rm bitcore-wallet-client.js
-	rm bitcore-wallet-client.min.js
+	rm lifetioncore-wallet-client.js
+	rm lifetioncore-wallet-client.min.js
 
-bitcore-wallet-client.js: index.js lib/*.js
+lifetioncore-wallet-client.js: index.js lib/*.js
 	${BIN_PATH}browserify $< > $@
 
-bitcore-wallet-client.min.js: bitcore-wallet-client.js
+lifetioncore-wallet-client.min.js: lifetioncore-wallet-client.js
 	uglify  -s $<  -o $@
 
 cover:

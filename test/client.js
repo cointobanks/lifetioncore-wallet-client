@@ -15,16 +15,16 @@ var tingodb = require('tingodb')({
 
 var log = require('../lib/log');
 
-var Bitcore = require('@dashevo/dashcore-lib');
+var Bitcore = require('lifetioncore-lib');
 var Bitcore_ = {
   btc: Bitcore,
   bch: require('bitcore-lib-cash'),
 };
 
 
-var BitcorePayPro = require('@dashevo/dashcore-payment-protocol');
+var BitcorePayPro = require('lifetioncore-payment-protocol');
 
-var BWS = require('bitcore-wallet-service-dash');
+var BWS = require('lifetioncore-wallet-service');
 
 var Common = require('../lib/common');
 var Constants = Common.Constants;

@@ -1,17 +1,17 @@
 {
-  "name": "bitcore-wallet-client-dash",
+  "name": "lifetioncore-wallet-client",
   "main": "index.js",
   "version": "2.1.1",
-  "homepage": "https://github.com/dashpay/bitcore-wallet-client-dash",
+  "homepage": "https://github.com/cointobanks/lifetioncore-wallet-client",
   "authors": ["BitPay Inc"],
-  "description": "Client for bitcore-wallet-service-dash",
+  "description": "Client for lifetioncore-wallet-service",
   "keywords": [
-    "dash",
-    "copay-dash",
+    "lifetioncoin",
+    "mobile-wallet",
     "multisig",
     "wallet",
     "client",
-    "bitcore-dash"
+    "lifetioncore"
   ],
   "ignore": [
     "**/.*",

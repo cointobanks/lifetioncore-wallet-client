@@ -4,7 +4,7 @@ var _ = require('lodash');
 var chai = require('chai');
 var sinon = require('sinon');
 var should = chai.should();
-var Bitcore = require('@dashevo/dashcore-lib');
+var Bitcore = require('lifetioncore-lib');
 
 var Utils = require('../lib/common/utils');
 
