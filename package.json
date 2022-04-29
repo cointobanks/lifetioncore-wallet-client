@@ -24,7 +24,7 @@
     "url": "https://github.com/cointobanks/lifetioncore-wallet-client/issues"
   },
   "dependencies": {
-    "async": "^0.9.0",
+    "async": "^2.6.4",
     "bip38": "^1.3.0",
     "bitcore-lib-cash": "^0.16.1",
     "grunt-jsdox": "matiu/grunt-jsdox#update/jsdoc-4.10",
